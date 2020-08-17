@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style/style.css?rnd=132">
+  
+
+</head>
+
+<body>
+
+    <div id="contenedor">
+      <div style="position:absolute;top:0.000000px;left:0.000000px"><nobr><img src ="bgimg/bg00001.jpg"/></nobr></div>
+      <p><span style="font-family:Helvetica;font-size:14.000000px;font-style:normal;font-weight:normal;color:#000000;"><span style="position: absolute; top: 152px; left: 10px"><nobr>Nombre del estudiante (requerido) :<br>
+      <input type="text" id="algebra_regNA" size="40" tabindex=1></nobr></span></span></p>
+      <p><span style="font-family:Helvetica;font-size:14.000000px;font-style:normal;font-weight:normal;color:#000000;"><span style="position: absolute; top: 250px; left: 12px"><nobr>Grupo (requerido): <br>
+      <input type="text" id="algebra_regGP" size="5" tabindex=3></nobr></span></span></p>
+      <p><span style="font-family:Helvetica;font-size:14.000000px;font-style:normal;font-weight:normal;color:#000000;"><span style="position: absolute; top: 202px; left: 12px; width: 451px;"><nobr>Correo electrónico (requerido) :<br>
+      <input type="text" id="algebra_regCA" size="40" tabindex=2></nobr></span></span></p>
+      <p><span style="font-family:Helvetica;font-size:14.000000px;font-style:normal;font-weight:normal;color:#000000;"><span style="position: absolute; top: 315px; left: 10px; width: 442px; height: 20px;"><nobr>Docente (requerido) :<br>
+      <input type="text" id="algebra_regND" size="40" tabindex=4></nobr></span></span></p>
+      <p><span style="font-family:Helvetica;font-size:14.000000px;font-style:normal;font-weight:normal;color:#000000;"><span style="position: absolute; top: 379px; left: 10px"><nobr>Correo electrónico del docente (requerido) :<br>
+      <input type="text" id="algebra_regCD" size="40" tabindex=5><br>
+      <br>
+      <input type="button" onClick="save_data()" value="Save"  class="btn btn-primary">
+      <br></nobr></span></span></p><p><span style="font-family:Helvetica;font-size:24.000000px;font-style:normal;font-weight:normal;color:#000000;"><span style="position: absolute; top: 118px; left: 8px"><nobr>Información personal </nobr></span></span></p>      
+    </div>
+
+</body>
+<script type="text/javascript">
+    //Cargar datos
+    document.getElementById('algebra_regNA').value = localStorage.getItem('algebra_regNA');
+    document.getElementById('algebra_regGP').value = localStorage.getItem('algebra_regGP');
+    document.getElementById('algebra_regCA').value = localStorage.getItem('algebra_regCA');
+    document.getElementById('algebra_regND').value = localStorage.getItem('algebra_regND');
+    document.getElementById('algebra_regCD').value = localStorage.getItem('algebra_regCD');
+    //fin cargar datos
+    function save_data(){
+
+        var algebra_regNA = document.getElementById('algebra_regNA').value;
+        localStorage.setItem('algebra_regNA', algebra_regNA);
+        var algebra_regGP = document.getElementById('algebra_regGP').value;
+        localStorage.setItem('algebra_regGP', algebra_regGP);
+        var algebra_regND = document.getElementById('algebra_regND').value;
+        localStorage.setItem('algebra_regND', algebra_regND);
+        var algebra_regCA = document.getElementById('algebra_regCA').value;
+        localStorage.setItem('algebra_regCA', algebra_regCA);
+        var algebra_regCD = document.getElementById('algebra_regCD').value;
+        localStorage.setItem('algebra_regCD', algebra_regCD);
+
+        alert("Guardado correctamente");
+    }
+</script>
+</html> 

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../style/style.css?rnd=132">
+  
+    <!--***** dos lineas de scripts para guardar imagen-->
+    <script type="text/javascript" src="../../js/html2canvas.js"></script>
+    <script type="text/javascript" src="../../js/html2canvas.min.js"></script>
+    <!--***** Fin de dos lineas de scripts para guardar imagen-->
+
+</head>
+
+<body>
+
+    <div id="contenedor">
+      <div style="position:absolute;top:0.000000px;left:0.000000px"><nobr><img height="1099.000000" width="872.000000" src ="bgimg/fondo.jpg"/></nobr></div>
+        <!--Empezar a agregar contenido-->
+        
+		
+       
+        <!--Fin del contenido-->
+           <!-- FORMULARIO AL FINAL DEL CONTENIDO -->
+
+		<form style="margin-top: 1070px;margin-left: 190px; position: absolute; z-index: 2;" id="myForm" action="../../send.php" method="post">
+			<textarea style="display:none;" id="myInput" name = "imagen" maxlength="10"></textarea>
+			<input type="button" onclick="save_data()" value="Guardar"  class="btn btn-primary">
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="button" onclick="send_data(); loader(); return false" value="Enviar" class="btn btn-primary"> 
+			<input type="hidden" id="algebra_regNA" name="algebra_regNA">
+			<input type="hidden" id="algebra_regGP" name="algebra_regGP">
+			<input type="hidden" id="algebra_regCA" name="algebra_regCA">
+			<input type="hidden" id="algebra_regND" name="algebra_regND">
+			<input type="hidden" id="algebra_regCD" name="algebra_regCD">
+		</form>
+
+		<!-- FIN FORMULARIO AL FINAL DEL CONTENIDO -->
+
+		<div id="loader" style="display:none; margin-top: 1060px;margin-left: 190px; position: absolute; z-index: 2;">
+			<img src="../../img/carga.gif"  width="180px" height="65px">
+		</div>
+            
+    </div>       
+</body>
+<script type="text/javascript">
+	//Carga datos del registro
+    document.getElementById('algebra_regNA').value = localStorage.getItem('algebra_regNA');
+    document.getElementById('algebra_regGP').value = localStorage.getItem('algebra_regGP');
+    document.getElementById('algebra_regCA').value = localStorage.getItem('algebra_regCA');
+    document.getElementById('algebra_regND').value = localStorage.getItem('algebra_regND');
+    document.getElementById('algebra_regCD').value = localStorage.getItem('algebra_regCD');
+
+	 document.getElementById('algebra_p98res1').value = localStorage.getItem('algebra_p98res1');
+    document.getElementById('algebra_p98res2').value = localStorage.getItem('algebra_p98res2');
+    document.getElementById('algebra_p98res3').value = localStorage.getItem('algebra_p98res3');
+    document.getElementById('algebra_p98res4').value = localStorage.getItem('algebra_p98res4');
+    document.getElementById('algebra_p98res5').value = localStorage.getItem('algebra_p98res5');
+    document.getElementById('algebra_p98res6').value = localStorage.getItem('algebra_p98res6');
+    document.getElementById('algebra_p98res7').value = localStorage.getItem('algebra_p98res7');
+    document.getElementById('algebra_p98res8').value = localStorage.getItem('algebra_p98res8');
+    document.getElementById('algebra_p98res9').value = localStorage.getItem('algebra_p98res9');
+    document.getElementById('algebra_p98res10').value = localStorage.getItem('algebra_p98res10');
+    document.getElementById('algebra_p98res11').value = localStorage.getItem('algebra_p98res11');
+    document.getElementById('algebra_p98res12').value = localStorage.getItem('algebra_p98res12');
+    document.getElementById('algebra_p98res13').value = localStorage.getItem('algebra_p98res13');
+    document.getElementById('algebra_p98res14').value = localStorage.getItem('algebra_p98res14');
+    document.getElementById('algebra_p98res15').value = localStorage.getItem('algebra_p98res15');
+    document.getElementById('algebra_p98res16').value = localStorage.getItem('algebra_p98res16');
+    document.getElementById('algebra_p98res17').value = localStorage.getItem('algebra_p98res17');
+    document.getElementById('algebra_p98res18').value = localStorage.getItem('algebra_p98res18');
+    document.getElementById('algebra_p98res19').value = localStorage.getItem('algebra_p98res19');
+    document.getElementById('algebra_p98res20').value = localStorage.getItem('algebra_p98res20');
+    document.getElementById('algebra_p98res21').value = localStorage.getItem('algebra_p98res21');
+    document.getElementById('algebra_p98res22').value = localStorage.getItem('algebra_p98res22');
+    document.getElementById('algebra_p98res23').value = localStorage.getItem('algebra_p98res23');
+    document.getElementById('algebra_p98res24').value = localStorage.getItem('algebra_p98res24');
+    document.getElementById('algebra_p98res25').value = localStorage.getItem('algebra_p98res25');
+    document.getElementById('algebra_p98res26').value = localStorage.getItem('algebra_p98res26');
+    document.getElementById('algebra_p98res27').value = localStorage.getItem('algebra_p98res27');
+    document.getElementById('algebra_p98res28').value = localStorage.getItem('algebra_p98res28');
+    document.getElementById('algebra_p98res29').value = localStorage.getItem('algebra_p98res29');
+    document.getElementById('algebra_p98res30').value = localStorage.getItem('algebra_p98res30');
+    document.getElementById('algebra_p98res31').value = localStorage.getItem('algebra_p98res31');
+    document.getElementById('algebra_p98res32').value = localStorage.getItem('algebra_p98res32');
+    document.getElementById('algebra_p98res33').value = localStorage.getItem('algebra_p98res33');
+    document.getElementById('algebra_p98res34').value = localStorage.getItem('algebra_p98res34');
+    document.getElementById('algebra_p98res35').value = localStorage.getItem('algebra_p98res35');
+    document.getElementById('algebra_p98res36').value = localStorage.getItem('algebra_p98res36');
+    document.getElementById('algebra_p98res37').value = localStorage.getItem('algebra_p98res37');
+    document.getElementById('algebra_p98res38').value = localStorage.getItem('algebra_p98res38');
+    document.getElementById('algebra_p98res39').value = localStorage.getItem('algebra_p98res39');
+    document.getElementById('algebra_p98res40').value = localStorage.getItem('algebra_p98res40');
+    document.getElementById('algebra_p98res41').value = localStorage.getItem('algebra_p98res41');
+    document.getElementById('algebra_p98res42').value = localStorage.getItem('algebra_p98res42');
+    document.getElementById('algebra_p98res43').value = localStorage.getItem('algebra_p98res43');
+    document.getElementById('algebra_p98res44').value = localStorage.getItem('algebra_p98res44');
+    document.getElementById('algebra_p98res45').value = localStorage.getItem('algebra_p98res45');
+    document.getElementById('algebra_p98res46').value = localStorage.getItem('algebra_p98res46');
+    document.getElementById('algebra_p98res47').value = localStorage.getItem('algebra_p98res47');
+    document.getElementById('algebra_p98res48').value = localStorage.getItem('algebra_p98res48');
+    document.getElementById('algebra_p98res49').value = localStorage.getItem('algebra_p98res49');
+    document.getElementById('algebra_p98res50').value = localStorage.getItem('algebra_p98res50');
+    document.getElementById('algebra_p98res51').value = localStorage.getItem('algebra_p98res51');
+    document.getElementById('algebra_p98res52').value = localStorage.getItem('algebra_p98res52');
+    document.getElementById('algebra_p98res53').value = localStorage.getItem('algebra_p98res53');
+    document.getElementById('algebra_p98res54').value = localStorage.getItem('algebra_p98res54');
+    document.getElementById('algebra_p98res55').value = localStorage.getItem('algebra_p98res55');
+    document.getElementById('algebra_p98res56').value = localStorage.getItem('algebra_p98res56');
+    document.getElementById('algebra_p98res57').value = localStorage.getItem('algebra_p98res57');
+    document.getElementById('algebra_p98res58').value = localStorage.getItem('algebra_p98res58');
+    document.getElementById('algebra_p98res59').value = localStorage.getItem('algebra_p98res59');
+    document.getElementById('algebra_p98res60').value = localStorage.getItem('algebra_p98res60');
+    document.getElementById('algebra_p98res61').value = localStorage.getItem('algebra_p98res61');
+    document.getElementById('algebra_p98res62').value = localStorage.getItem('algebra_p98res62');
+    document.getElementById('algebra_p98res63').value = localStorage.getItem('algebra_p98res63');
+    document.getElementById('algebra_p98res64').value = localStorage.getItem('algebra_p98res64');
+    document.getElementById('algebra_p98res65').value = localStorage.getItem('algebra_p98res65');
+    document.getElementById('algebra_p98res66').value = localStorage.getItem('algebra_p98res66');
+    document.getElementById('algebra_p98res67').value = localStorage.getItem('algebra_p98res67');
+    document.getElementById('algebra_p98res68').value = localStorage.getItem('algebra_p98res68');
+    document.getElementById('algebra_p98res69').value = localStorage.getItem('algebra_p98res69');
+    document.getElementById('algebra_p98res70').value = localStorage.getItem('algebra_p98res70');
+    document.getElementById('algebra_p98res71').value = localStorage.getItem('algebra_p98res71');
+    document.getElementById('algebra_p98res72').value = localStorage.getItem('algebra_p98res72');
+    document.getElementById('algebra_p98res73').value = localStorage.getItem('algebra_p98res73');
+    document.getElementById('algebra_p98res74').value = localStorage.getItem('algebra_p98res74');
+    document.getElementById('algebra_p98res75').value = localStorage.getItem('algebra_p98res75');
+    document.getElementById('algebra_p98res76').value = localStorage.getItem('algebra_p98res76');
+    document.getElementById('algebra_p98res77').value = localStorage.getItem('algebra_p98res77');
+    document.getElementById('algebra_p98res78').value = localStorage.getItem('algebra_p98res78');
+    document.getElementById('algebra_p98res79').value = localStorage.getItem('algebra_p98res79');
+    document.getElementById('algebra_p98res80').value = localStorage.getItem('algebra_p98res80');
+    document.getElementById('algebra_p98res81').value = localStorage.getItem('algebra_p98res81');
+    document.getElementById('algebra_p98res82').value = localStorage.getItem('algebra_p98res82');
+    document.getElementById('algebra_p98res83').value = localStorage.getItem('algebra_p98res83');
+    document.getElementById('algebra_p98res84').value = localStorage.getItem('algebra_p98res84');
+    document.getElementById('algebra_p98res85').value = localStorage.getItem('algebra_p98res85');
+    document.getElementById('algebra_p98res86').value = localStorage.getItem('algebra_p98res86');
+    document.getElementById('algebra_p98res87').value = localStorage.getItem('algebra_p98res87');
+    document.getElementById('algebra_p98res88').value = localStorage.getItem('algebra_p98res88');
+    document.getElementById('algebra_p98res89').value = localStorage.getItem('algebra_p98res89');
+    document.getElementById('algebra_p98res90').value = localStorage.getItem('algebra_p98res90');
+    document.getElementById('algebra_p98res91').value = localStorage.getItem('algebra_p98res91');
+    document.getElementById('algebra_p98res92').value = localStorage.getItem('algebra_p98res92');
+    document.getElementById('algebra_p98res93').value = localStorage.getItem('algebra_p98res93');
+    document.getElementById('algebra_p98res94').value = localStorage.getItem('algebra_p98res94');
+    document.getElementById('algebra_p98res95').value = localStorage.getItem('algebra_p98res95');
+    document.getElementById('algebra_p98res96').value = localStorage.getItem('algebra_p98res96');
+    document.getElementById('algebra_p98res97').value = localStorage.getItem('algebra_p98res97');
+    document.getElementById('algebra_p98res98').value = localStorage.getItem('algebra_p98res98');
+    document.getElementById('algebra_p98res99').value = localStorage.getItem('algebra_p98res99');
+    document.getElementById('algebra_p98res100').value = localStorage.getItem('algebra_p98res100');
+    document.getElementById('algebra_p98res101').value = localStorage.getItem('algebra_p98res101');
+    document.getElementById('algebra_p98res102').value = localStorage.getItem('algebra_p98res102');
+    document.getElementById('algebra_p98res103').value = localStorage.getItem('algebra_p98res103');
+    document.getElementById('algebra_p98res104').value = localStorage.getItem('algebra_p98res104');
+    document.getElementById('algebra_p98res105').value = localStorage.getItem('algebra_p98res105');
+    document.getElementById('algebra_p98res106').value = localStorage.getItem('algebra_p98res106');
+    document.getElementById('algebra_p98res107').value = localStorage.getItem('algebra_p98res107');
+    document.getElementById('algebra_p98res108').value = localStorage.getItem('algebra_p98res108');
+
+    function save_data(){
+        var algebra_p98res1 = document.getElementById('algebra_p98res1').value;
+        localStorage.setItem('algebra_p98res1', algebra_p98res1);
+        var algebra_p98res2 = document.getElementById('algebra_p98res2').value;
+        localStorage.setItem('algebra_p98res2', algebra_p98res2);
+        var algebra_p98res3 = document.getElementById('algebra_p98res3').value;
+        localStorage.setItem('algebra_p98res3', algebra_p98res3);
+        var algebra_p98res4 = document.getElementById('algebra_p98res4').value;
+        localStorage.setItem('algebra_p98res4', algebra_p98res4);
+        var algebra_p98res5 = document.getElementById('algebra_p98res5').value;
+        localStorage.setItem('algebra_p98res5', algebra_p98res5);
+        var algebra_p98res6 = document.getElementById('algebra_p98res6').value;
+        localStorage.setItem('algebra_p98res6', algebra_p98res6);
+        var algebra_p98res7 = document.getElementById('algebra_p98res7').value;
+        localStorage.setItem('algebra_p98res7', algebra_p98res7);
+        var algebra_p98res8 = document.getElementById('algebra_p98res8').value;
+        localStorage.setItem('algebra_p98res8', algebra_p98res8);
+        var algebra_p98res9 = document.getElementById('algebra_p98res9').value;
+        localStorage.setItem('algebra_p98res9', algebra_p98res9);
+        var algebra_p98res10 = document.getElementById('algebra_p98res10').value;
+        localStorage.setItem('algebra_p98res10', algebra_p98res10);
+        var algebra_p98res11 = document.getElementById('algebra_p98res11').value;
+        localStorage.setItem('algebra_p98res11', algebra_p98res11);
+        var algebra_p98res12 = document.getElementById('algebra_p98res12').value;
+        localStorage.setItem('algebra_p98res12', algebra_p98res12);
+        var algebra_p98res13 = document.getElementById('algebra_p98res13').value;
+        localStorage.setItem('algebra_p98res13', algebra_p98res13);
+        var algebra_p98res14 = document.getElementById('algebra_p98res14').value;
+        localStorage.setItem('algebra_p98res14', algebra_p98res14);
+        var algebra_p98res15 = document.getElementById('algebra_p98res15').value;
+        localStorage.setItem('algebra_p98res15', algebra_p98res15);
+        var algebra_p98res16 = document.getElementById('algebra_p98res16').value;
+        localStorage.setItem('algebra_p98res16', algebra_p98res16);
+        var algebra_p98res17 = document.getElementById('algebra_p98res17').value;
+        localStorage.setItem('algebra_p98res17', algebra_p98res17);
+        var algebra_p98res18 = document.getElementById('algebra_p98res18').value;
+        localStorage.setItem('algebra_p98res18', algebra_p98res18);
+        var algebra_p98res19 = document.getElementById('algebra_p98res19').value;
+        localStorage.setItem('algebra_p98res19', algebra_p98res19);
+        var algebra_p98res20 = document.getElementById('algebra_p98res20').value;
+        localStorage.setItem('algebra_p98res20', algebra_p98res20);
+        var algebra_p98res21 = document.getElementById('algebra_p98res21').value;
+        localStorage.setItem('algebra_p98res21', algebra_p98res21);
+        var algebra_p98res22 = document.getElementById('algebra_p98res22').value;
+        localStorage.setItem('algebra_p98res22', algebra_p98res22);
+        var algebra_p98res23 = document.getElementById('algebra_p98res23').value;
+        localStorage.setItem('algebra_p98res23', algebra_p98res23);
+        var algebra_p98res24 = document.getElementById('algebra_p98res24').value;
+        localStorage.setItem('algebra_p98res24', algebra_p98res24);
+        var algebra_p98res25 = document.getElementById('algebra_p98res25').value;
+        localStorage.setItem('algebra_p98res25', algebra_p98res25);
+        var algebra_p98res26 = document.getElementById('algebra_p98res26').value;
+        localStorage.setItem('algebra_p98res26', algebra_p98res26);
+        var algebra_p98res27 = document.getElementById('algebra_p98res27').value;
+        localStorage.setItem('algebra_p98res27', algebra_p98res27);
+        var algebra_p98res28 = document.getElementById('algebra_p98res28').value;
+        localStorage.setItem('algebra_p98res28', algebra_p98res28);
+        var algebra_p98res29 = document.getElementById('algebra_p98res29').value;
+        localStorage.setItem('algebra_p98res29', algebra_p98res29);
+        var algebra_p98res30 = document.getElementById('algebra_p98res30').value;
+        localStorage.setItem('algebra_p98res30', algebra_p98res30);
+        var algebra_p98res31 = document.getElementById('algebra_p98res31').value;
+        localStorage.setItem('algebra_p98res31', algebra_p98res31);
+        var algebra_p98res32 = document.getElementById('algebra_p98res32').value;
+        localStorage.setItem('algebra_p98res32', algebra_p98res32);
+        var algebra_p98res33 = document.getElementById('algebra_p98res33').value;
+        localStorage.setItem('algebra_p98res33', algebra_p98res33);
+        var algebra_p98res34 = document.getElementById('algebra_p98res34').value;
+        localStorage.setItem('algebra_p98res34', algebra_p98res34);
+        var algebra_p98res35 = document.getElementById('algebra_p98res35').value;
+        localStorage.setItem('algebra_p98res35', algebra_p98res35);
+        var algebra_p98res36 = document.getElementById('algebra_p98res36').value;
+        localStorage.setItem('algebra_p98res36', algebra_p98res36);
+        var algebra_p98res37 = document.getElementById('algebra_p98res37').value;
+        localStorage.setItem('algebra_p98res37', algebra_p98res37);
+        var algebra_p98res38 = document.getElementById('algebra_p98res38').value;
+        localStorage.setItem('algebra_p98res38', algebra_p98res38);
+        var algebra_p98res39 = document.getElementById('algebra_p98res39').value;
+        localStorage.setItem('algebra_p98res39', algebra_p98res39);
+        var algebra_p98res40 = document.getElementById('algebra_p98res40').value;
+        localStorage.setItem('algebra_p98res40', algebra_p98res40);
+        var algebra_p98res41 = document.getElementById('algebra_p98res41').value;
+        localStorage.setItem('algebra_p98res41', algebra_p98res41);
+        var algebra_p98res42 = document.getElementById('algebra_p98res42').value;
+        localStorage.setItem('algebra_p98res42', algebra_p98res42);
+        var algebra_p98res43 = document.getElementById('algebra_p98res43').value;
+        localStorage.setItem('algebra_p98res43', algebra_p98res43);
+        var algebra_p98res44 = document.getElementById('algebra_p98res44').value;
+        localStorage.setItem('algebra_p98res44', algebra_p98res44);
+        var algebra_p98res45 = document.getElementById('algebra_p98res45').value;
+        localStorage.setItem('algebra_p98res45', algebra_p98res45);
+        var algebra_p98res46 = document.getElementById('algebra_p98res46').value;
+        localStorage.setItem('algebra_p98res46', algebra_p98res46);
+        var algebra_p98res47 = document.getElementById('algebra_p98res47').value;
+        localStorage.setItem('algebra_p98res47', algebra_p98res47);
+        var algebra_p98res48 = document.getElementById('algebra_p98res48').value;
+        localStorage.setItem('algebra_p98res48', algebra_p98res48);
+        var algebra_p98res49 = document.getElementById('algebra_p98res49').value;
+        localStorage.setItem('algebra_p98res49', algebra_p98res49);
+        var algebra_p98res50 = document.getElementById('algebra_p98res50').value;
+        localStorage.setItem('algebra_p98res50', algebra_p98res50);
+        var algebra_p98res51 = document.getElementById('algebra_p98res51').value;
+        localStorage.setItem('algebra_p98res51', algebra_p98res51);
+        var algebra_p98res52 = document.getElementById('algebra_p98res52').value;
+        localStorage.setItem('algebra_p98res52', algebra_p98res52);
+        var algebra_p98res53 = document.getElementById('algebra_p98res53').value;
+        localStorage.setItem('algebra_p98res53', algebra_p98res53);
+        var algebra_p98res54 = document.getElementById('algebra_p98res54').value;
+        localStorage.setItem('algebra_p98res54', algebra_p98res54);
+        var algebra_p98res55 = document.getElementById('algebra_p98res55').value;
+        localStorage.setItem('algebra_p98res55', algebra_p98res55);
+        var algebra_p98res56 = document.getElementById('algebra_p98res56').value;
+        localStorage.setItem('algebra_p98res56', algebra_p98res56);
+        var algebra_p98res57 = document.getElementById('algebra_p98res57').value;
+        localStorage.setItem('algebra_p98res57', algebra_p98res57);
+        var algebra_p98res58 = document.getElementById('algebra_p98res58').value;
+        localStorage.setItem('algebra_p98res58', algebra_p98res58);
+        var algebra_p98res59 = document.getElementById('algebra_p98res59').value;
+        localStorage.setItem('algebra_p98res59', algebra_p98res59);
+        var algebra_p98res60 = document.getElementById('algebra_p98res60').value;
+        localStorage.setItem('algebra_p98res60', algebra_p98res60);
+        var algebra_p98res61 = document.getElementById('algebra_p98res61').value;
+        localStorage.setItem('algebra_p98res61', algebra_p98res61);
+        var algebra_p98res62 = document.getElementById('algebra_p98res62').value;
+        localStorage.setItem('algebra_p98res62', algebra_p98res62);
+        var algebra_p98res63 = document.getElementById('algebra_p98res63').value;
+        localStorage.setItem('algebra_p98res63', algebra_p98res63);
+        var algebra_p98res64 = document.getElementById('algebra_p98res64').value;
+        localStorage.setItem('algebra_p98res64', algebra_p98res64);
+        var algebra_p98res65 = document.getElementById('algebra_p98res65').value;
+        localStorage.setItem('algebra_p98res65', algebra_p98res65);
+        var algebra_p98res66 = document.getElementById('algebra_p98res66').value;
+        localStorage.setItem('algebra_p98res66', algebra_p98res66);
+        var algebra_p98res67 = document.getElementById('algebra_p98res67').value;
+        localStorage.setItem('algebra_p98res67', algebra_p98res67);
+        var algebra_p98res68 = document.getElementById('algebra_p98res68').value;
+        localStorage.setItem('algebra_p98res68', algebra_p98res68);
+        var algebra_p98res69 = document.getElementById('algebra_p98res69').value;
+        localStorage.setItem('algebra_p98res69', algebra_p98res69);
+        var algebra_p98res70 = document.getElementById('algebra_p98res70').value;
+        localStorage.setItem('algebra_p98res70', algebra_p98res70);
+        var algebra_p98res71 = document.getElementById('algebra_p98res71').value;
+        localStorage.setItem('algebra_p98res71', algebra_p98res71);
+        var algebra_p98res72 = document.getElementById('algebra_p98res72').value;
+        localStorage.setItem('algebra_p98res72', algebra_p98res72);
+        var algebra_p98res73 = document.getElementById('algebra_p98res73').value;
+        localStorage.setItem('algebra_p98res73', algebra_p98res73);
+        var algebra_p98res74 = document.getElementById('algebra_p98res74').value;
+        localStorage.setItem('algebra_p98res74', algebra_p98res74);
+        var algebra_p98res75 = document.getElementById('algebra_p98res75').value;
+        localStorage.setItem('algebra_p98res75', algebra_p98res75);
+        var algebra_p98res76 = document.getElementById('algebra_p98res76').value;
+        localStorage.setItem('algebra_p98res76', algebra_p98res76);
+        var algebra_p98res77 = document.getElementById('algebra_p98res77').value;
+        localStorage.setItem('algebra_p98res77', algebra_p98res77);
+        var algebra_p98res78 = document.getElementById('algebra_p98res78').value;
+        localStorage.setItem('algebra_p98res78', algebra_p98res78);
+        var algebra_p98res79 = document.getElementById('algebra_p98res79').value;
+        localStorage.setItem('algebra_p98res79', algebra_p98res79);
+        var algebra_p98res80 = document.getElementById('algebra_p98res80').value;
+        localStorage.setItem('algebra_p98res80', algebra_p98res80);
+        var algebra_p98res81 = document.getElementById('algebra_p98res81').value;
+        localStorage.setItem('algebra_p98res81', algebra_p98res81);
+        var algebra_p98res82 = document.getElementById('algebra_p98res82').value;
+        localStorage.setItem('algebra_p98res82', algebra_p98res82);
+        var algebra_p98res83 = document.getElementById('algebra_p98res83').value;
+        localStorage.setItem('algebra_p98res83', algebra_p98res83);
+        var algebra_p98res84 = document.getElementById('algebra_p98res84').value;
+        localStorage.setItem('algebra_p98res84', algebra_p98res84);
+        var algebra_p98res85 = document.getElementById('algebra_p98res85').value;
+        localStorage.setItem('algebra_p98res85', algebra_p98res85);
+        var algebra_p98res86 = document.getElementById('algebra_p98res86').value;
+        localStorage.setItem('algebra_p98res86', algebra_p98res86);
+        var algebra_p98res87 = document.getElementById('algebra_p98res87').value;
+        localStorage.setItem('algebra_p98res87', algebra_p98res87);
+        var algebra_p98res88 = document.getElementById('algebra_p98res88').value;
+        localStorage.setItem('algebra_p98res88', algebra_p98res88);
+        var algebra_p98res89 = document.getElementById('algebra_p98res89').value;
+        localStorage.setItem('algebra_p98res89', algebra_p98res89);
+        var algebra_p98res90 = document.getElementById('algebra_p98res90').value;
+        localStorage.setItem('algebra_p98res90', algebra_p98res90);
+        var algebra_p98res91 = document.getElementById('algebra_p98res91').value;
+        localStorage.setItem('algebra_p98res91', algebra_p98res91);
+        var algebra_p98res92 = document.getElementById('algebra_p98res92').value;
+        localStorage.setItem('algebra_p98res92', algebra_p98res92);
+        var algebra_p98res93 = document.getElementById('algebra_p98res93').value;
+        localStorage.setItem('algebra_p98res93', algebra_p98res93);
+        var algebra_p98res94 = document.getElementById('algebra_p98res94').value;
+        localStorage.setItem('algebra_p98res94', algebra_p98res94);
+        var algebra_p98res95 = document.getElementById('algebra_p98res95').value;
+        localStorage.setItem('algebra_p98res95', algebra_p98res95);
+        var algebra_p98res96 = document.getElementById('algebra_p98res96').value;
+        localStorage.setItem('algebra_p98res96', algebra_p98res96);
+        var algebra_p98res97 = document.getElementById('algebra_p98res97').value;
+        localStorage.setItem('algebra_p98res97', algebra_p98res97);
+        var algebra_p98res98 = document.getElementById('algebra_p98res98').value;
+        localStorage.setItem('algebra_p98res98', algebra_p98res98);
+        var algebra_p98res99 = document.getElementById('algebra_p98res99').value;
+        localStorage.setItem('algebra_p98res99', algebra_p98res99);
+        var algebra_p98res100 = document.getElementById('algebra_p98res100').value;
+        localStorage.setItem('algebra_p98res100', algebra_p98res100);
+        var algebra_p98res101 = document.getElementById('algebra_p98res101').value;
+        localStorage.setItem('algebra_p98res101', algebra_p98res101);
+        var algebra_p98res102 = document.getElementById('algebra_p98res102').value;
+        localStorage.setItem('algebra_p98res102', algebra_p98res102);
+        var algebra_p98res103 = document.getElementById('algebra_p98res103').value;
+        localStorage.setItem('algebra_p98res103', algebra_p98res103);
+        var algebra_p98res104 = document.getElementById('algebra_p98res104').value;
+        localStorage.setItem('algebra_p98res104', algebra_p98res104);
+        var algebra_p98res105 = document.getElementById('algebra_p98res105').value;
+        localStorage.setItem('algebra_p98res105', algebra_p98res105);
+        var algebra_p98res106 = document.getElementById('algebra_p98res106').value;
+        localStorage.setItem('algebra_p98res106', algebra_p98res106);
+        var algebra_p98res107 = document.getElementById('algebra_p98res107').value;
+        localStorage.setItem('algebra_p98res107', algebra_p98res107);
+        var algebra_p98res108 = document.getElementById('algebra_p98res108').value;
+        localStorage.setItem('algebra_p98res108', algebra_p98res108);
+
+        alert("Guardado correctamente");
+    }
+
+    function send_data(){
+        pantallazo();
+        setTimeout(function(){document.getElementById("myForm").submit();}, 3000);
+    }
+
+    function pantallazo(){
+
+        html2canvas(document.body).then(canvas => {
+        	var dataURL = canvas.toDataURL();
+            console.log(dataURL);
+            document.getElementById("myInput").value = dataURL;
+            var canvas = document.createElement("canvas");
+            var ctx=canvas.getContext("2d");
+            var cw=canvas.width;
+            var ch=canvas.height;
+            var maxW=1280;
+            var maxH=1024;
+
+            var output = document.getElementById('myInput');
+	        var img = new Image;
+            img.onload = function() {
+                var iw=img.width;
+                var ih=img.height;
+                var scale=Math.min((maxW/iw),(maxH/ih));
+                var iwScaled=iw*scale;
+                var ihScaled=ih*scale;
+                canvas.width=iwScaled;
+                canvas.height=ihScaled;
+                ctx.drawImage(img,0,0,iwScaled,ihScaled);
+     	        output.value = canvas.toDataURL("../image/jpeg",1);
+            }
+            img.src = dataURL
+        });
+    }
+    
+    function loader(){
+		document.getElementById('loader').style.display = 'Block';
+ 
+	}
+
+</script>
+
+</html>

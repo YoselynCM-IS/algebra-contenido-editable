@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../style/style.css?rnd=132">
+  
+    <!--***** dos lineas de scripts para guardar imagen-->
+    <script type="text/javascript" src="../../js/html2canvas.js"></script>
+    <script type="text/javascript" src="../../js/html2canvas.min.js"></script>
+    <!--***** Fin de dos lineas de scripts para guardar imagen-->
+
+</head>
+
+<body>
+
+    <div id="contenedor">
+      <div style="position:absolute;top:0.000000px;left:0.000000px"><nobr><img height="1099.000000" width="872.000000" src ="bgimg/fondo.jpg"/></nobr></div>
+        <!--Empezar a agregar contenido-->
+        <span style="position: absolute; top: 269px; left: 254px">
+		<textarea rows = "1" cols = "7" maxlength = "7" id="algebra_p152res1"></textarea>
+		</span>
+	  <span style="position: absolute; top: 301px; left: 254px">
+	  <textarea rows = "1" cols = "7" maxlength = "7" id="algebra_p152res2"></textarea>
+	  </span>
+	  <span style="position: absolute; top: 335px; left: 254px">
+	  <textarea rows = "1" cols = "7" maxlength = "7" id="algebra_p152res3"></textarea>
+	  </span>
+	  <span style="position: absolute; top: 367px; left: 254px">
+	  <textarea rows = "1" cols = "7" maxlength = "7" id="algebra_p152res4"></textarea>
+	  </span>
+	  <span style="position: absolute; top: 399px; left: 254px">
+	  <textarea rows = "1" cols = "7" maxlength = "7" id="algebra_p152res5"></textarea>
+	  </span>
+	  <span style="position: absolute; top: 612px; left: 261px">
+	  <textarea rows = "1" cols = "7" maxlength = "7" id="algebra_p152res6"></textarea>
+	  </span>
+	  <span style="position: absolute; top: 644px; left: 261px">
+	  <textarea rows = "1" cols = "7" maxlength = "7" id="algebra_p152res7"></textarea>
+	  </span>
+	  <span style="position: absolute; top: 675px; left: 261px">
+	  <textarea rows = "1" cols = "7" maxlength = "7" id="algebra_p152res8"></textarea>
+	  </span>
+	  <span style="position: absolute; top: 710px; left: 261px">
+	  <textarea rows = "1" cols = "7" maxlength = "7" id="algebra_p152res9"></textarea>
+	  </span>
+	  <span style="position: absolute; top: 743px; left: 261px">
+	  <textarea rows = "1" cols = "7" maxlength = "7" id="algebra_p152res10"></textarea>
+	  </span>
+		
+	  <div id="algebra_p152res11-zone" style="position: absolute; top: 220px; left: 390px; width: 301px; height: 266px;">
+			<img id="algebra_p152res11" src="bgimg/01.jpg" height="270" width="301"> 
+	  </div>
+	  <script type="text/javascript">
+                var algebra_p152res11 = document.getElementById('algebra_p152res11');
+                if (localStorage.getItem("Img_algebra_p152res11") === null) {
+                    var dataImage = "bgimg/01.jpg"
+                }
+                else {
+                    var dataImage = localStorage.getItem('Img_algebra_p152res11');
+                }
+                algebra_p152res11.src = dataImage;
+                var previewZone = document.getElementById('algebra_p152res11-zone');
+                previewZone.appendChild(algebra_p152res11);
+            </script>
+
+            <div id="divFileUpload1" style="position: absolute; top: 497px; left: 377px">
+                <input class="btn btn-primary" id="file-upload1" type="file" accept="image/*" />
+            </div>
+            
+		
+		<div id="algebra_p152res12-zone" style="position: absolute; top: 556px; left: 398px; width: 308px; height: 290px;">
+			<img id="algebra_p152res12" src="bgimg/01.jpg" height="297" width="307"> 
+		</div>
+		
+	  <script type="text/javascript">
+                var algebra_p152res12 = document.getElementById('algebra_p152res12');
+                if (localStorage.getItem("Img_algebra_p152res12") === null) {
+                    var dataImage = "bgimg/01.jpg"
+                }
+                else {
+                    var dataImage = localStorage.getItem('Img_algebra_p152res12');
+                }
+                algebra_p152res12.src = dataImage;
+                var previewZone = document.getElementById('algebra_p152res12-zone');
+                previewZone.appendChild(algebra_p152res12);
+            </script>
+
+            <div id="divFileUpload2" style="position: absolute; top: 874px; left: 399px">
+                <input class="btn btn-primary" id="file-upload2" type="file" accept="image/*" />
+            </div>
+		
+		
+       
+        <!--Fin del contenido-->
+           <!-- FORMULARIO AL FINAL DEL CONTENIDO -->
+
+		<form style="margin-top: 1070px;margin-left: 190px; position: absolute; z-index: 2;" id="myForm" action="../../send.php" method="post">
+			<textarea style="display:none;" id="myInput" name = "imagen" maxlength="10"></textarea>
+			<input type="button" onclick="save_data()" value="Guardar"  class="btn btn-primary">
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="button" onclick="send_data(); loader(); return false" value="Enviar" class="btn btn-primary"> 
+			<input type="hidden" id="algebra_regNA" name="algebra_regNA">
+			<input type="hidden" id="algebra_regGP" name="algebra_regGP">
+			<input type="hidden" id="algebra_regCA" name="algebra_regCA">
+			<input type="hidden" id="algebra_regND" name="algebra_regND">
+			<input type="hidden" id="algebra_regCD" name="algebra_regCD">
+	  </form>
+
+		<!-- FIN FORMULARIO AL FINAL DEL CONTENIDO -->
+
+		<div id="loader" style="display:none; margin-top: 1060px;margin-left: 190px; position: absolute; z-index: 2;">
+			<img src="../../img/carga.gif"  width="180px" height="65px">
+		</div>
+            
+    </div>       
+</body>
+<script>
+    function readFile(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+     
+            reader.onload = function (e) {
+                var algebra_p152res11 = document.getElementById('algebra_p152res11');
+                //e.target.result contents the base64 data from the image uploaded
+                algebra_p152res11.src = e.target.result;
+                console.log(e.target.result);
+     
+                var previewZone = document.getElementById('algebra_p152res11-zone');
+                previewZone.appendChild(algebra_p152res11);
+            }
+    
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+     
+    var fileUpload = document.getElementById('file-upload1');
+    fileUpload.onchange = function (e) {
+        //document.getElementById('file-preview-zone').innerHTML = "";
+        readFile(e.srcElement);
+    }
+     
+    function readFile1(input) {
+        if (input.files && input.files[0]) {
+            var reader1 = new FileReader();
+     
+            reader1.onload = function (e) {
+                var algebra_p152res12 = document.getElementById('algebra_p152res12');
+                //e.target.result contents the base64 data from the image uploaded
+                algebra_p152res12.src = e.target.result;
+                console.log(e.target.result);
+     
+                var previewZone2 = document.getElementById('algebra_p152res12-zone');
+                previewZone2.appendChild(algebra_p152res12);
+            }
+    
+            reader1.readAsDataURL(input.files[0]);
+        }
+    }
+     
+    var fileUpload1 = document.getElementById('file-upload2');
+    fileUpload1.onchange = function (e) {
+        //document.getElementById('file-preview-zone').innerHTML = "";
+        readFile1(e.srcElement);
+    }
+     
+</script>
+<script type="text/javascript">
+	//Carga datos del registro
+    document.getElementById('algebra_regNA').value = localStorage.getItem('algebra_regNA');
+    document.getElementById('algebra_regGP').value = localStorage.getItem('algebra_regGP');
+    document.getElementById('algebra_regCA').value = localStorage.getItem('algebra_regCA');
+    document.getElementById('algebra_regND').value = localStorage.getItem('algebra_regND');
+    document.getElementById('algebra_regCD').value = localStorage.getItem('algebra_regCD');
+
+	 document.getElementById('algebra_p152res1').value = localStorage.getItem('algebra_p152res1');
+    document.getElementById('algebra_p152res2').value = localStorage.getItem('algebra_p152res2');
+    document.getElementById('algebra_p152res3').value = localStorage.getItem('algebra_p152res3');
+    document.getElementById('algebra_p152res4').value = localStorage.getItem('algebra_p152res4');
+    document.getElementById('algebra_p152res5').value = localStorage.getItem('algebra_p152res5');
+    document.getElementById('algebra_p152res6').value = localStorage.getItem('algebra_p152res6');
+    document.getElementById('algebra_p152res7').value = localStorage.getItem('algebra_p152res7');
+    document.getElementById('algebra_p152res8').value = localStorage.getItem('algebra_p152res8');
+    document.getElementById('algebra_p152res9').value = localStorage.getItem('algebra_p152res9');
+    document.getElementById('algebra_p152res10').value = localStorage.getItem('algebra_p152res10');
+    
+
+    function save_data(){
+		//local storage
+        bannerImage = document.getElementById('algebra_p152res11').src;
+        localStorage.setItem("Img_algebra_p152res11", bannerImage);
+
+        bannerImage2 = document.getElementById('algebra_p152res12').src;
+        localStorage.setItem("Img_algebra_p152res12", bannerImage2);
+		
+        var algebra_p152res1 = document.getElementById('algebra_p152res1').value;
+        localStorage.setItem('algebra_p152res1', algebra_p152res1);
+        var algebra_p152res2 = document.getElementById('algebra_p152res2').value;
+        localStorage.setItem('algebra_p152res2', algebra_p152res2);
+        var algebra_p152res3 = document.getElementById('algebra_p152res3').value;
+        localStorage.setItem('algebra_p152res3', algebra_p152res3);
+        var algebra_p152res4 = document.getElementById('algebra_p152res4').value;
+        localStorage.setItem('algebra_p152res4', algebra_p152res4);
+        var algebra_p152res5 = document.getElementById('algebra_p152res5').value;
+        localStorage.setItem('algebra_p152res5', algebra_p152res5);
+        var algebra_p152res6 = document.getElementById('algebra_p152res6').value;
+        localStorage.setItem('algebra_p152res6', algebra_p152res6);
+        var algebra_p152res7 = document.getElementById('algebra_p152res7').value;
+        localStorage.setItem('algebra_p152res7', algebra_p152res7);
+        var algebra_p152res8 = document.getElementById('algebra_p152res8').value;
+        localStorage.setItem('algebra_p152res8', algebra_p152res8);
+        var algebra_p152res9 = document.getElementById('algebra_p152res9').value;
+        localStorage.setItem('algebra_p152res9', algebra_p152res9);
+        var algebra_p152res10 = document.getElementById('algebra_p152res10').value;
+        localStorage.setItem('algebra_p152res10', algebra_p152res10);
+        
+
+        alert("Guardado correctamente");
+    }
+
+    function send_data(){
+        pantallazo();
+        setTimeout(function(){document.getElementById("myForm").submit();}, 3000);
+    }
+
+    function pantallazo(){
+
+        html2canvas(document.body).then(canvas => {
+        	var dataURL = canvas.toDataURL();
+            console.log(dataURL);
+            document.getElementById("myInput").value = dataURL;
+            var canvas = document.createElement("canvas");
+            var ctx=canvas.getContext("2d");
+            var cw=canvas.width;
+            var ch=canvas.height;
+            var maxW=1280;
+            var maxH=1024;
+
+            var output = document.getElementById('myInput');
+	        var img = new Image;
+            img.onload = function() {
+                var iw=img.width;
+                var ih=img.height;
+                var scale=Math.min((maxW/iw),(maxH/ih));
+                var iwScaled=iw*scale;
+                var ihScaled=ih*scale;
+                canvas.width=iwScaled;
+                canvas.height=ihScaled;
+                ctx.drawImage(img,0,0,iwScaled,ihScaled);
+     	        output.value = canvas.toDataURL("../image/jpeg",1);
+            }
+            img.src = dataURL
+        });
+    }
+    
+    function loader(){
+		document.getElementById('loader').style.display = 'Block';
+ 
+	}
+
+</script>
+
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../style/style.css?rnd=132">
+  
+    <!--***** dos lineas de scripts para guardar imagen-->
+    <script type="text/javascript" src="../../js/html2canvas.js"></script>
+    <script type="text/javascript" src="../../js/html2canvas.min.js"></script>
+    <!--***** Fin de dos lineas de scripts para guardar imagen-->
+
+</head>
+
+<body>
+
+    <div id="contenedor">
+      <div style="position:absolute;top:0.000000px;left:0.000000px"><nobr><img height="1099.000000" width="872.000000" src ="bgimg/fondo.jpg"/></nobr></div>
+        <!--Empezar a agregar contenido-->
+        
+		<span style="position: absolute; top: 204px; left: 186px">
+			<input type="checkbox" id="algebra_p158res1">
+		</span>
+      <span style="position: absolute; top: 240px; left: 186px">
+			<input type="checkbox" id="algebra_p158res2">
+		</span>
+      <span style="position: absolute; top: 278px; left: 186px">
+			<input type="checkbox" id="algebra_p158res3">
+		</span>
+      <span style="position: absolute; top: 313px; left: 186px">
+			<input type="checkbox" id="algebra_p158res4">
+		</span>
+      
+      <div id="algebra_p158res5-zone" style="position: absolute; top: 553px; left: 188px; width: 631px; height: 491px;">
+			<img id="algebra_p158res5" src="bgimg/01.jpg" height="489" width="629"> 
+		</div>
+      <script type="text/javascript">
+            var algebra_p158res5 = document.getElementById('algebra_p158res5');
+            if (localStorage.getItem("Img_algebra_p158res5") === null) {
+                var dataImage = "bgimg/01.jpg"
+            }
+            else {
+                var dataImage = localStorage.getItem('Img_algebra_p158res5');
+            }
+            algebra_p158res5.src = dataImage;
+            var previewZone = document.getElementById('algebra_p158res5-zone');
+            previewZone.appendChild(algebra_p158res5);
+        </script>
+
+        <div id="divFileUpload" style="position: absolute; top: 527px; left: 372px">
+            <input class="btn btn-primary" id="file-upload" type="file" accept="image/*" />
+        </div>
+       
+        <!--Fin del contenido-->
+           <!-- FORMULARIO AL FINAL DEL CONTENIDO -->
+
+		<form style="margin-top: 1070px;margin-left: 190px; position: absolute; z-index: 2;" id="myForm" action="../../send.php" method="post">
+			<textarea style="display:none;" id="myInput" name = "imagen" maxlength="10"></textarea>
+			<input type="button" onclick="save_data()" value="Guardar"  class="btn btn-primary">
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="button" onclick="send_data(); loader(); return false" value="Enviar" class="btn btn-primary"> 
+			<input type="hidden" id="algebra_regNA" name="algebra_regNA">
+			<input type="hidden" id="algebra_regGP" name="algebra_regGP">
+			<input type="hidden" id="algebra_regCA" name="algebra_regCA">
+			<input type="hidden" id="algebra_regND" name="algebra_regND">
+			<input type="hidden" id="algebra_regCD" name="algebra_regCD">
+		</form>
+
+		<!-- FIN FORMULARIO AL FINAL DEL CONTENIDO -->
+
+		<div id="loader" style="display:none; margin-top: 1060px;margin-left: 190px; position: absolute; z-index: 2;">
+			<img src="../../img/carga.gif"  width="180px" height="65px">
+		</div>
+            
+    </div>       
+</body>
+<script>
+    function readFile(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+     
+            reader.onload = function (e) {
+                var algebra_p158res5 = document.getElementById('algebra_p158res5');
+                //e.target.result contents the base64 data from the image uploaded
+                algebra_p158res5.src = e.target.result;
+                console.log(e.target.result);
+     
+                var previewZone = document.getElementById('algebra_p158res5-zone');
+                previewZone.appendChild(algebra_p158res5);
+            }
+    
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+     
+    var fileUpload = document.getElementById('file-upload');
+    fileUpload.onchange = function (e) {
+        //document.getElementById('file-preview-zone').innerHTML = "";
+        readFile(e.srcElement);
+    }
+     
+</script>
+<script type="text/javascript">
+	//Carga datos del registro
+    document.getElementById('algebra_regNA').value = localStorage.getItem('algebra_regNA');
+    document.getElementById('algebra_regGP').value = localStorage.getItem('algebra_regGP');
+    document.getElementById('algebra_regCA').value = localStorage.getItem('algebra_regCA');
+    document.getElementById('algebra_regND').value = localStorage.getItem('algebra_regND');
+    document.getElementById('algebra_regCD').value = localStorage.getItem('algebra_regCD');
+
+	//<!-- SECCION PARA GUARDAR EN LOCAL STORAGE CON CHECKBOX-->
+
+	document.getElementById('algebra_p158res1').value = localStorage.getItem('algebra_p158res1');
+    // ** INICIO ACTIVACION CHECKBOK ** //
+    //comprobar si el valor es 1 se selecciona 
+    if(document.getElementById('algebra_p158res1').value == "1")
+        document.getElementById("algebra_p158res1").checked = true; // si es uno se activa en checkbox
+    // ** FIN ACTIVACION CHECKBOK ** //
+
+    document.getElementById('algebra_p158res2').value = localStorage.getItem('algebra_p158res2');
+    // ** INICIO ACTIVACION CHECKBOK ** //
+    if(document.getElementById('algebra_p158res2').value == "1")
+        document.getElementById("algebra_p158res2").checked = true; 
+    // ** FIN ACTIVACION CHECKBOK ** //
+
+    document.getElementById('algebra_p158res3').value = localStorage.getItem('algebra_p158res3');
+     // ** INICIO ACTIVACION CHECKBOK ** //
+    if(document.getElementById('algebra_p158res3').value == "1")
+        document.getElementById("algebra_p158res3").checked = true; 
+    // ** FIN ACTIVACION CHECKBOK ** //
+
+    document.getElementById('algebra_p158res4').value = localStorage.getItem('algebra_p158res4');
+     // ** INICIO ACTIVACION CHECKBOK ** //
+    if(document.getElementById('algebra_p158res4').value == "1")
+        document.getElementById("algebra_p158res4").checked = true; 
+    // ** FIN ACTIVACION CHECKBOK ** //
+
+    document.getElementById('algebra_p158res5').value = localStorage.getItem('algebra_p158res5');
+     // ** INICIO ACTIVACION CHECKBOK ** //
+    if(document.getElementById('algebra_p158res5').value == "1")
+        document.getElementById("algebra_p158res5").checked = true; 
+
+
+    function save_data(){
+		
+		 //local storage
+        bannerImage = document.getElementById('algebra_p158res5').src;
+        localStorage.setItem("Img_algebra_p158res5", bannerImage);
+
+        //** INICIO PARA GUARDAR CHECKBOX **//
+        //verificar si el check esta seleccionado se asigna un 1 para activarlo al momento de cargar
+        var isChecked = document.getElementById('algebra_p158res1').checked;
+        // si esta seleccionado se asigna bandera 1
+        if(isChecked){
+            var algebra_p158res1 = "1";
+        }
+        localStorage.setItem('algebra_p158res1', algebra_p158res1);
+        //** FIN PARA GUARDAR CHECKBOX **//
+
+        //** INICIO PARA GUARDAR CHECKBOX **//
+        var isChecked = document.getElementById('algebra_p158res2').checked;
+        if(isChecked){
+            var algebra_p158res2 = "1";
+        }    
+        localStorage.setItem('algebra_p158res2', algebra_p158res2);
+        console.log("algebra_p158res2",algebra_p158res2);
+        //** FIN PARA GUARDAR CHECKBOX **//
+        
+        //** INICIO PARA GUARDAR CHECKBOX **//
+        var isChecked = document.getElementById('algebra_p158res3').checked;
+        if(isChecked){
+            var algebra_p158res3 = "1";
+        }    
+        localStorage.setItem('algebra_p158res3', algebra_p158res3);
+        //** FIN PARA GUARDAR CHECKBOX **//
+
+        //** INICIO PARA GUARDAR CHECKBOX **//
+        var isChecked = document.getElementById('algebra_p158res4').checked;
+        if(isChecked){
+            var algebra_p158res4 = "1";
+        }    
+        localStorage.setItem('algebra_p158res4', algebra_p158res4);
+        //** FIN PARA GUARDAR CHECKBOX **//
+
+        //** INICIO PARA GUARDAR CHECKBOX **//
+        var isChecked = document.getElementById('algebra_p158res5').checked;
+        if(isChecked){
+            var algebra_p158res5 = "1";
+        }    
+        localStorage.setItem('algebra_p158res5', algebra_p158res5);
+        //** FIN PARA GUARDAR CHECKBOX **//
+
+
+
+        alert("Guardado correctamente");
+    }
+
+    function send_data(){
+        pantallazo();
+        setTimeout(function(){document.getElementById("myForm").submit();}, 3000);
+    }
+
+    function pantallazo(){
+
+        html2canvas(document.body).then(canvas => {
+        	var dataURL = canvas.toDataURL();
+            console.log(dataURL);
+            document.getElementById("myInput").value = dataURL;
+            var canvas = document.createElement("canvas");
+            var ctx=canvas.getContext("2d");
+            var cw=canvas.width;
+            var ch=canvas.height;
+            var maxW=1280;
+            var maxH=1024;
+
+            var output = document.getElementById('myInput');
+	        var img = new Image;
+            img.onload = function() {
+                var iw=img.width;
+                var ih=img.height;
+                var scale=Math.min((maxW/iw),(maxH/ih));
+                var iwScaled=iw*scale;
+                var ihScaled=ih*scale;
+                canvas.width=iwScaled;
+                canvas.height=ihScaled;
+                ctx.drawImage(img,0,0,iwScaled,ihScaled);
+     	        output.value = canvas.toDataURL("../image/jpeg",1);
+            }
+            img.src = dataURL
+        });
+    }
+    
+    function loader(){
+		document.getElementById('loader').style.display = 'Block';
+ 
+	}
+
+</script>
+
+</html>
